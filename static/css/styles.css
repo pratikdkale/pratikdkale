@@ -348,6 +348,22 @@ html[data-theme="light"] .promo-quantquill {
 }
 
 
+
+/* Blog cards */
+.blog-card .media { width:100%; aspect-ratio: 16/9; overflow:hidden; background: var(--bg); }
+.blog-card .media img { width:100%; height:100%; object-fit: cover; display:block; }
+.post-title { margin:6px 0; font-size:18px; line-height:1.35; }
+.blog-card .meta { color: var(--muted); font-size: 13.5px; margin-bottom: 6px; }
+
+/* Promos already exist in your About section; reuse with different tints */
+.promo-drunkkalam { background: linear-gradient(90deg, rgba(255,215,0,0.08), transparent); }
+html[data-theme="light"] .promo-drunkkalam { background: linear-gradient(90deg, #fff9e5, transparent); }
+.promo-quantquill { background: linear-gradient(90deg, rgba(137,207,240,0.1), transparent); }
+html[data-theme="light"] .promo-quantquill { background: linear-gradient(90deg, #e6f6ff, transparent); }
+
+
+
+
 /* Primary card */
 .about-main .about-header{
   display:flex; gap:14px; align-items:center; margin-bottom:8px;

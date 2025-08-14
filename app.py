@@ -5,28 +5,11 @@ import feedparser
 
 app = Flask(__name__)
 
+# app.py (or wherever you define routes)
+from utils.medium import get_medium_posts
+
 # ---- Blog helpers ----
 BLOG_DIR = os.path.join(app.root_path, "blogs")
-
-@app.route("/blog")
-def blog():
-    # Your local blog posts
-    posts = get_local_posts()  # This is your existing logic
-    
-    # Medium RSS feed URL
-    feed_url = "https://medium.com/feed/@yourusername"  # replace with your Medium username
-    feed = feedparser.parse(feed_url)
-    
-    # Extract top 5 articles
-    external_posts = []
-    for entry in feed.entries[:5]:
-        external_posts.append({
-            'title': entry.title,
-            'link': entry.link,
-            'published': entry.published
-        })
-
-    return render_template("blog.html", posts=posts, external_posts=external_posts)
 
 def list_blog_posts():
     posts = []
@@ -65,7 +48,8 @@ def about():
 
 @app.route("/blogs")
 def blogs():
-    return render_template("blogs.html", posts=list_blog_posts())
+    posts = get_medium_posts(limit=4)  # adjust count if you want
+    return render_template("blogs.html", posts=posts)
 
 @app.route("/blog/<slug>")
 def blog_post(slug):

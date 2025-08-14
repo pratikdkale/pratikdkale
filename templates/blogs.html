@@ -1,36 +1,57 @@
 {% extends "base.html" %}
 {% block content %}
+<section id="blogs">
+  <h2>Blogs</h2>
+  <p class="muted">
+    Two spaces: <strong>DrunkKalam</strong> for personal reflections and learnings, and
+    <strong>QuantQuill</strong> on Medium for Quant, Finance, and Tech.
+  </p>
 
-<section>
-  <h1>Blog</h1>
-  <p class="muted">Notes on finance research, execution, and systems.</p>
-
-  <ul class="posts">
+  <!-- QuantQuill from Medium -->
+  <h3 style="margin-top:10px;">QuantQuill on Medium</h3>
+  <div class="card-grid two">
     {% for p in posts %}
-      <li>
-        <a href="{{ url_for('blog_post', slug=p.slug) }}">{{ p.title }}</a>
-        {% if p.date %}
-          <span class="meta">{{ p.date.strftime("%b %d, %Y") }}</span>
-        {% endif %}
-      </li>
-    {% else %}
-      <li class="muted">No local posts yet.</li>
+      <article class="card blog-card">
+        <div class="media">
+          {% if p.image %}
+            <img src="{{ p.image }}" alt="{{ p.title }}">
+          {% else %}
+            <img src="{{ url_for('static', filename='images/blog_placeholder.jpg') }}" alt="">
+          {% endif %}
+        </div>
+        <div class="card-body">
+          <div class="badge-row">
+            <span class="badge">Medium</span>
+            {% if p.read_min %}<span class="badge badge-outline">{{ p.read_min }} min read</span>{% endif %}
+          </div>
+          <h3 class="post-title">{{ p.title }}</h3>
+          <p class="meta">{{ p.published }}</p>
+          <p>{{ p.summary }}</p>
+          <div class="btn-row">
+            <a class="btn" href="{{ p.url }}" target="_blank" rel="noopener">Read on Medium</a>
+          </div>
+        </div>
+      </article>
     {% endfor %}
-  </ul>
-</section>
+  </div>
 
-<section>
-  <h2>My Articles on Medium</h2>
-  <ul class="posts">
-    {% for m in external_posts %}
-      <li>
-        <a href="{{ m.link }}" target="_blank">{{ m.title }}</a>
-        <span class="meta">{{ m.published }}</span>
-      </li>
-    {% else %}
-      <li class="muted">No external articles found.</li>
-    {% endfor %}
-  </ul>
-</section>
+  <!-- DrunkKalam (personal blog) -->
+  <!-- <h3 style="margin-top:18px;">DrunkKalam — Personal Blog</h3> -->
+  <a class="promo-card promo-drunkkalam" href="https://pratikdkale.blogspot.com" target="_blank" rel="noopener">
+    <div class="promo-text">
+      <h4>From DrunkKalam</h4>
+      <p>Personal reflections, life experiences, and learnings.</p>
+    </div>
+    <div class="promo-action">Explore</div>
+  </a>
 
+  <!-- QuantQuill profile link -->
+  <a class="promo-card promo-quantquill" href="https://medium.com/@quantquill" target="_blank" rel="noopener">
+    <div class="promo-text">
+      <h4>From QuantQuill</h4>
+      <p>Articles on Quant, Finance, and Technology.</p>
+    </div>
+    <div class="promo-action">Explore</div>
+  </a>
+</section>
 {% endblock %}
