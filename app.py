@@ -67,4 +67,4 @@ def blog_post(slug):
     return render_template("post.html", title=title, content=html)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
