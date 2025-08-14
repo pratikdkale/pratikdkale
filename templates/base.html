@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pratik Kale | Quant Portfolio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <script defer src="{{ url_for('static', filename='js/theme.js') }}"></script>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="container">
+    <!-- Top row: brand | About+Blogs (center) | theme toggle -->
+    <div class="nav-top">
+      <div class="brand"><a href="{{ url_for('index') }}">Pratik D. Kale</a></div>
+
+      <div class="nav-center">
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('blogs') }}">Blogs</a>
+      </div>
+
+      <div class="nav-right">
+        <button id="themeToggle" class="toggle" aria-label="Toggle theme">●</button>
+      </div>
+    </div>
+
+    <!-- Bottom row: the rest -->
+    <nav class="nav-bottom">
+      <a href="{{ url_for('index') }}#case-studies">Major Work</a>
+      <a href="{{ url_for('index') }}#experience">Experience</a>
+      <a href="{{ url_for('index') }}#academics">Academics</a>
+      <a href="{{ url_for('index') }}#projects">Projects</a>
+      <a href="{{ url_for('index') }}#certifications">Certifications</a>
+      <a href="{{ url_for('index') }}#publications">Publications</a>
+      <a href="{{ url_for('index') }}#awards">Awards</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© {{ 2025 }} Pratik D. Kale • Quantitative Research, Strategy, and Engineering</p>
+  </div>
+</footer>
+</body>
+</html>

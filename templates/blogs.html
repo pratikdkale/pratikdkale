@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section>
+  <h1>Blog</h1>
+  <p class="muted">Notes on finance research, execution, and systems.</p>
+
+  <ul class="posts">
+    {% for p in posts %}
+      <li>
+        <a href="{{ url_for('blog_post', slug=p.slug) }}">{{ p.title }}</a>
+        {% if p.date %}
+          <span class="meta">{{ p.date.strftime("%b %d, %Y") }}</span>
+        {% endif %}
+      </li>
+    {% else %}
+      <li class="muted">No local posts yet.</li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>My Articles on Medium</h2>
+  <ul class="posts">
+    {% for m in external_posts %}
+      <li>
+        <a href="{{ m.link }}" target="_blank">{{ m.title }}</a>
+        <span class="meta">{{ m.published }}</span>
+      </li>
+    {% else %}
+      <li class="muted">No external articles found.</li>
+    {% endfor %}
+  </ul>
+</section>
+
+{% endblock %}

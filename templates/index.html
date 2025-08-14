@@ -1,0 +1,534 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <h1>Pratik D. Kale</h1>
+    <p class="muted">Quantitative Researcher focused on execution, signal engineering, and financial modeling. Building robust research pipelines and finance-grade systems.</p>
+    <a class="cta" href="#case-studies">Let's get started →</a>
+    <div class="worked-with muted">Worked with: Fidelity Investments • Tata Consultancy Services (TCS) • KPMG </div>
+  </div>
+  <div class="hero-photo">
+    <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile photo">
+  </div>
+</section>
+
+<section id="case-studies">
+  <h2>Major Work</h2>
+  <p>Solving user and business problems with data-driven finance and scalable systems.</p>
+
+  <div class="case">
+    <div class="case-copy">
+      <span class="pill">FinTech</span>
+      <h3>Dynamic Yield Curve Modeling & Macro Signals</h3>
+      <p>Modeled the U.S. Treasury yield curve with the Dynamic Nelson–Siegel state-space model and Kalman filtering, then forecasted 2s10s using the slope factor. Built thresholded trading signals and evaluated PnL behaviour.</p>
+      <a class="btn" href="https://github.com/pratikdkale/Dynamic-Yield-Curve-Modeling">View Project →</a>
+    </div>
+    <figure><img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?q=80&w=1080&auto=format&fit=crop" alt=""></figure>
+  </div>
+
+  <div class="case">
+    <figure><img src="{{ url_for('static', filename='images/project_image_2.jpg') }}" alt="project_image_2"></figure>
+    <div class="case-copy">
+      <span class="pill">Execution</span>
+      <h3>Optimal Trade Execution via RL</h3>
+      <p>Gym-compatible execution environment on SPY 1-minute data with market impact. PPO agent reduced implementation shortfall and outperformed TWAP/VWAP baselines on multiple test windows.</p>
+      <a class="btn" href="https://github.com/pratikdkale/Reinforcement-Learning-for-Optimal-Trade-Execution">View Project →</a>
+    </div>
+  </div>
+
+  <div class="case">
+    <div class="case-copy">
+      <span class="pill">Options</span>
+      <h3>Delta–Gamma Hedging Strategy</h3>
+      <p>Simulated and compared a Long Straddle and a Delta–Gamma hedged portfolio using SPY option chains. Visualized convexity, sensitivity, and relative risk across regimes.</p>
+      <a class="btn" href="https://github.com/pratikdkale/Delta-Gamma-Hedging-Strategy">View Project →</a>
+    </div>
+    <figure><img src="https://images.unsplash.com/photo-1535320903710-d993d3d77d29?q=80&w=1080&auto=format&fit=crop" alt=""></figure>
+  </div>
+  <p>Hold on, you will see more in the PROJECTS section below.</p>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="timeline">
+    <article class="experience-item">
+    <div class="exp-logo">
+      <img src="{{ url_for('static', filename='images/stevens_logo.png') }}" alt="Stevens Institute of Technology Logo">
+    </div>
+    <div class="exp-content">
+      <h3>Quantitative Research Assistant - Stevens Institute of Technology</h3>
+      <div class="meta">Hoboken, NJ • May 2025 - Aug 2025</div>
+      <ul>
+        <li>Replicated four asset allocation strategies from DeMiguel et al. (Equal-Weight, Mean-Variance, Minimum-Variance, Value-Weighted) using real market cap and returns data.</li>
+        <li>Cleaned and merged multi-source datasets (Fama-French factors, 25-portfolio returns, market caps), aligning timeframes and reducing to 20 usable portfolios.</li>
+        <li>Computed Sharpe Ratios, Certainty-Equivalent Returns, and p-values using 60-month rolling windows to compare in-sample and out-of-sample performance.</li>
+        <li>Designed a reinforcement learning-based trading agent (85%+ signal accuracy) and evaluated 1000+ simulations to analyze execution cost, turnover, and robustness.</li>
+      </ul>
+      </div>
+    </article>
+    <article class="experience-item">
+    <div class="exp-logo">
+      <img src="{{ url_for('static', filename='images/fidelity__logo.png') }}" alt="Fidelity Investments Logo">
+    </div>
+    <div class="exp-content">
+      <h3>Cloud Engineer (Asset Management) — Fidelity Investments</h3>
+      <div class="meta">Bangalore, IN • Dec 2021 - Jan 2025</div>
+      <ul>
+        <li>Delivered blockchain-enabled financial infrastructure by tokenizing retail investment transactions using Ethereum-compatible networks (Polygon, ERC-20), enabling secure, on-chain representation of over $250M in client assets across fixed income and equity segments.</li>
+        <li>Designed and implemented 2 custom Groovy libraries supporting fully automated CI/CD pipelines for Node and Java-based fintech applications and Ethereum smart contracts; improved deployment efficiency by 60%, accelerating time-to-market for investment tools.</li>
+        <li>Developed a quantitative platform enabling ML-driven portfolio optimization, Sharpe ratio enhancement, and factor-based alpha signal generation for Strategic Investments; integrated time-series models and supported live execution strategies; integrated boto3 for automation, resulting in 80% reduction in manual tasks and faster alpha generation from models.</li>
+        <li>Represented the firm as a Quantitative Analytics SME at Fidvantage 2023, showcasing advancements in financial data engineering, accounting for 40% of tech innovation coverage across data warehousing, trade analytics, and factor modeling.</li>
+        <li>Built a custom Python library atop Spring Boot services to support cloud-native deployment of ML models used in asset pricing, risk forecasting, and back testing strategies; reduced spin-up time by 70% and ensured 95% CI/CD reliability.</li>
+        <li>Spearheaded Cloud FinOps cost-optimization for real-time financial data pipelines used in risk reporting and trade reconciliation; achieved $1.4M+ in annualized cost savings, aligning with compliance and operational efficiency KPIs.</li>
+      </ul>
+    </div>
+    </article>
+    <article class="experience-item">
+    <div class="exp-logo">
+      <img src="{{ url_for('static', filename='images/tcs_logo.png') }}" alt="Tata Consultancy Services Logo">
+    </div>
+    <div class="exp-content">
+      <h3>Full Stack Engineer — Tata Consultancy Services</h3>
+      <div class="meta">Bangalore, IN • Nov 2020 - Nov 2021</div>
+      <ul>
+        <li>Served as Python Backend Developer for client Morrisons UK PLC, building AWS serverless microservices for order estimation and inventory automation, enhancing the order processing speed by 42% and reducing inventory reporting latency by 35%.</li>
+        <li>Devised and developed REST APIs using Flask REST Framework.</li>
+        <li>Leveraged AWS Services (Lambda, ECS, S3, SNS, Eventbridge, CloudWatch, RDS) and Terraform for project deliverables, completing 5+ production releases with zero critical errors and 100% SLA adherence.</li>
+      </ul>
+    </div>
+    </article>
+    <article class="experience-item">
+    <div class="exp-logo">
+      <img src="{{ url_for('static', filename='images/kpmg_logo.png') }}" alt="KPMG Logo">
+    </div>
+    <div class="exp-content">
+      <h3>Data Analyst Intern — KPMG</h3>
+      <div class="meta">Virtual • Apr 2020 - Jun 2020</div>
+      <ul>
+        <li>Performed feature engineering, data wrangling, data analysis, and data visualization to support business insights during the internship.</li>
+        <li>Conducted end-to-end analysis of large datasets for a multinational cycling company using Excel, SQL, and Python.</li>
+        <li>Developed interactive Tableau dashboards to automate weekly KPI reporting, improving stakeholder visibility and reporting speed by 30%.</li>
+        <li>Applied statistical data analysis techniques with Python and Pandas to identify trends, patterns, and actionable recommendations.</li>
+      </ul>
+    </div>
+    </article>
+    <article class="experience-item">
+    <div class="exp-logo">
+      <img src="{{ url_for('static', filename='images/coep_logo.png') }}" alt="College of Engineering Pune Logo">
+    </div>
+    <div class="exp-content">
+      <h3>Research Assistant — College of Engineering Pune</h3>
+      <div class="meta">Pune, IN • Jun 2018 - Jul 2018</div>
+      <ul>
+        <li>Assisted a lead researcher in developing video-based anomaly detection procedures, undertaking experimentation and technical reporting for a real-time monitoring system.</li>
+        <li>Studied anomaly detection and implemented the License Plate Number Detection System using OpenCV (Computer Vision) and Machine Learning.</li>
+        <li>Worked with Python programming language, applying the KNN Algorithm on EMNIST MNIST Dataset.</li>
+      </ul>
+    </div>
+    </article>
+    <article class="experience-item">
+    <div class="exp-logo">
+      <img src="{{ url_for('static', filename='images/nic_logo.png') }}" alt="National Informatics Centre Logo">
+    </div>
+    <div class="exp-content">
+      <h3>Research Intern — National Informatics Centre</h3>
+      <div class="meta">New Delhi, IN • Jun 2017 - Aug 2017</div>
+      <ul>
+        <li>Assisted senior analysts in economic and policy data analysis on government defense projects and contributed to composing sections of national development reports.</li>
+        <li>Collaborated with NIC officials to develop a website for automating acceptance of school applications for government-funded incubation programs under the Atal Tinkering Labs initiative.</li>
+        <li>Supported a joint initiative of Government of India & Atal Innovative Mission (AIM) to streamline application processes for incubation programs.</li>
+      </ul>
+    </div>
+    </article>
+  </div>
+</section>
+
+<section id="academics">
+  <h2>Academics</h2>
+  <div class="academics-grid">
+    <div class="academic-card">
+      <div class="image">
+        <img src="{{ url_for('static', filename='images/stevens_logo.png') }}" alt="Stevens Institute of Technology">
+      </div>
+      <div class="content">
+        <div class="badges">
+          <span class="badge">Graduate</span>
+          <span class="badge">GPA 3.84</span>
+        </div>
+        <h3>MS, Financial Technology & Analytics</h3>
+        <p class="meta">Stevens Institute of Technology • Jan 2025 – Dec 2026</p>
+        <ul>
+          <li>Applied Statistics in Finance</li>
+          <li>Probability Theory</li>
+          <li>Financial Technology</li>
+          <li>Big Data Technology</li>
+          <li>Financial Risk Management</li>
+          <li>Financial Data Science</li>
+          <li>Intro to Bloomberg & Refinitiv</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="academic-card">
+      <div class="image">
+        <img src="{{ url_for('static', filename='images/sgbau.jpg') }}" alt="SGB Amravati University">
+      </div>
+      <div class="content">
+        <div class="badges">
+          <span class="badge">Undergraduate</span>
+          <span class="badge">CGPA 8.74</span>
+        </div>
+        <h3>BE, Information Technology</h3>
+        <p class="meta">SGB Amravati University • Aug 2016 – May 2020</p>
+        <ul>
+          <li>Database Management Systems</li>
+          <li>Artificial Intelligence</li>
+          <li>Web Technology</li>
+          <li>Computer Architecture</li>
+          <li>Operating Systems</li>
+          <li>Web Commerce</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="card-grid two">
+    <!-- DNS + Macro -->
+    <article class="card">
+      <div class="media">
+        <img src="{{ url_for('static', filename='images/dns_yield.jpg') }}" alt="Dynamic Nelson–Siegel factors">
+      </div>
+      <div class="card-body">
+        <div class="badge-row">
+          <span class="badge">Macro</span><span class="badge badge-outline">Time‑Series</span>
+        </div>
+        <h3>Dynamic Nelson–Siegel & Macro Signals</h3>
+        <p>Kalman‑filtered β₀/β₁/β₂, 2s10s forecasting from β₁, signal thresholds, and backtests.</p>
+        <ul class="mini">
+          <li>State‑space modeling & forecasting</li>
+          <li>Thresholded trading signals</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn btn-outline" href="https://github.com/pratikdkale/Dynamic-Yield-Curve-Modeling" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="#case-studies">Read Case Study</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- RL Execution -->
+    <article class="card">
+      <div class="media">
+        <img src="{{ url_for('static', filename='images/rl_exec.jpg') }}" alt="RL Execution">
+      </div>
+      <div class="card-body">
+        <div class="badge-row">
+          <span class="badge">Execution</span><span class="badge badge-outline">RL</span>
+        </div>
+        <h3>Optimal Trade Execution via Reinforcement Learning</h3>
+        <p>Custom Gym environment on SPY 1‑minute data; PPO agent reduced implementation shortfall vs TWAP/VWAP.</p>
+        <ul class="mini">
+          <li>Market impact & slippage modeling</li>
+          <li>PPO training and evaluation</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn btn-outline" href="https://github.com/pratikdkale/Reinforcement-Learning-for-Optimal-Trade-Execution" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="#case-studies">Read Case Study</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Delta-Gamma -->
+    <article class="card">
+      <div class="media">
+        <img src="{{ url_for('static', filename='images/options_hedge.jpg') }}" alt="Delta Gamma Hedging">
+      </div>
+      <div class="card-body">
+        <div class="badge-row">
+          <span class="badge">Options</span><span class="badge badge-outline">Greeks</span>
+        </div>
+        <h3>Delta–Gamma Hedging Strategy</h3>
+        <p>Compared Long Straddle vs Delta‑Gamma hedged portfolio using SPY option chains; convexity visualization.</p>
+        <ul class="mini">
+          <li>Black‑Scholes Greeks estimation</li>
+          <li>Regime sensitivity analysis</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn btn-outline" href="https://github.com/pratikdkale/Delta-Gamma-Hedging-Strategy" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="#case-studies">Read Case Study</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Rare Events -->
+    <article class="card">
+      <div class="media">
+        <img src="{{ url_for('static', filename='images/rare_events.jpg') }}" alt="Rare event detection">
+      </div>
+      <div class="card-body">
+        <div class="badge-row">
+          <span class="badge">Analytics</span><span class="badge badge-outline">Anomaly</span>
+        </div>
+        <h3>Rare Events in Low‑Frequency Data</h3>
+        <p>Isolation Forest / LOF with sentiment overlays; custom hyperplane classifier for liquidity anomalies.</p>
+        <ul class="mini">
+          <li>92% precision on low‑liquidity anomalies</li>
+          <li>Interactive R Shiny dashboard</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn btn-outline" href="https://github.com/pratikdkale/Detecting-Rare-Events-in-Low-Frequency-Financial-Data" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="#case-studies">Read Case Study</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Single Stock Price Prediction using Twitter -->
+<article class="card">
+  <div class="media">
+    <img src="{{ url_for('static', filename='images/twitter_stock.jpg') }}" alt="Stock prediction from Twitter sentiment">
+  </div>
+  <div class="card-body">
+    <div class="badge-row">
+      <span class="badge">NLP</span><span class="badge badge-outline">Time‑Series</span>
+    </div>
+    <h3>Single Stock Price Prediction using Twitter</h3>
+    <p>Engineered an NLP‑driven sentiment + time‑series pipeline to predict directional moves using ARIMA/XGBoost; integrated Yahoo Finance and Twitter APIs for real‑time signals and backtests.</p>
+    <ul class="mini">
+      <li>Technologies: Python, Pandas, scikit‑learn, XGBoost, ARIMA</li>
+      <li>Sentiment extraction and feature engineering from tweets</li>
+      <li>86% directional accuracy on holdout period</li>
+    </ul>
+    <div class="btn-row">
+      <a class="btn btn-outline" href="https://github.com/pratikdkale/Single-Stock-Prediction-Twitter" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="#case-studies">Read Case Study</a>
+    </div>
+  </div>
+</article>
+
+<!-- License Plate Recognition System -->
+<article class="card">
+  <div class="media">
+    <img src="{{ url_for('static', filename='images/lpr.jpg') }}" alt="License Plate Recognition System">
+  </div>
+  <div class="card-body">
+    <div class="badge-row">
+      <span class="badge">Computer Vision</span><span class="badge badge-outline">IoT</span>
+    </div>
+    <h3>License Plate Recognition System</h3>
+    <p>Spearheaded a number‑plate detection and recognition system using KNN (Contour method); detects suspected vehicles, reads the plate, and stores the record for future use.</p>
+    <ul class="mini">
+      <li>Technologies: Python, OpenCV, scikit‑learn, Raspberry Pi</li>
+      <li>Contour‑based localization and KNN OCR workflow</li>
+      <li>Edge capture + centralized storage pipeline</li>
+    </ul>
+    <div class="btn-row">
+      <a class="btn btn-outline" href="https://github.com/pratikdkale/License-Plate-Recognition" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="#case-studies">Read Case Study</a>
+    </div>
+  </div>
+</article>
+
+<!-- Moody Player — Voice-Based Mood Detection and Music Player -->
+<article class="card">
+  <div class="media">
+    <img src="{{ url_for('static', filename='images/moody.jpg') }}" alt="Moody Player project">
+  </div>
+  <div class="card-body">
+    <div class="badge-row">
+      <span class="badge">Speech</span><span class="badge badge-outline">NLP</span>
+    </div>
+    <h3>Moody Player — Voice‑Based Mood Detection & Music Player</h3>
+    <p>Interactive desktop assistant that chats briefly, infers mood via sentiment analysis, and plays a relevant playlist from YouTube with a lightweight GUI.</p>
+    <ul class="mini">
+      <li>Technologies: Python, speech‑recognition, TextBlob/VADER, Tkinter</li>
+      <li>Randomized daily questions to avoid repetition</li>
+      <li>JSON‑driven playlists and prompts</li>
+    </ul>
+    <div class="btn-row">
+      <a class="btn btn-outline" href="https://github.com/pratikdkale/Moody-Player" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="#case-studies">Read Case Study</a>
+    </div>
+  </div>
+</article>
+
+<!-- Hospital Management System (HMS) -->
+<article class="card">
+  <div class="media">
+    <img src="{{ url_for('static', filename='images/hms.jpg') }}" alt="Hospital Management System">
+  </div>
+  <div class="card-body">
+    <div class="badge-row">
+      <span class="badge">Desktop</span><span class="badge badge-outline">SQLite</span>
+    </div>
+    <h3>Hospital Management System (HMS)</h3>
+    <p>Desktop application to streamline patient care, scheduling, and record‑keeping with modules for patients, doctors, appointments, and medical records.</p>
+    <ul class="mini">
+      <li>Technologies: Python 3.x, Tkinter, SQLite3</li>
+      <li>Search & filter across patient/doctor records</li>
+      <li>Clean, lightweight GUI for quick actions</li>
+    </ul>
+    <div class="btn-row">
+      <a class="btn btn-outline" href="https://github.com/pratikdkale/Hospital-Management-System" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="#case-studies">Read Case Study</a>
+    </div>
+  </div>
+</article>
+
+  </div>
+</section>
+
+
+<section id="certifications">
+  <h2>Certifications</h2>
+
+  <div class="card-grid three">
+    <article class="card compact">
+      <div class="media media-logo">
+        <img src="{{ url_for('static', filename='images/aws_badge.png') }}" alt="AWS SAA-C03">
+      </div>
+      <div class="card-body">
+        <h3>AWS Solutions Architect Associate (SAA‑C03)</h3>
+        <p class="meta">Amazon Web Services • 2023</p>
+        <div class="btn-row">
+          <a class="btn" href="https://www.credly.com/badges/6faef9c1-fb12-436d-bf5f-fa22f7e2fe15/linked_in_profile" target="_blank" rel="noopener">View Credential</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card compact">
+      <div class="media media-logo">
+        <img src="{{ url_for('static', filename='images/bloomberg_bff.png') }}" alt="Bloomberg Finance Fundamentals">
+      </div>
+      <div class="card-body">
+        <h3>Bloomberg Finance Fundamentals</h3>
+        <p class="meta">Bloomberg • 2025</p>
+        <div class="btn-row">
+          <a class="btn" href="https://portal.bloombergforeducation.com/certificates/your-bff" target="_blank" rel="noopener">View Credential</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card compact">
+      <div class="media media-logo">
+        <img src="{{ url_for('static', filename='images/bloomberg_bff.png') }}" alt="Bloomberg Market Concepts">
+      </div>
+      <div class="card-body">
+        <h3>Bloomberg Market Concepts (BMC)</h3>
+        <p class="meta">Bloomberg • 2025</p>
+        <div class="btn-row">
+          <a class="btn" href="https://portal.bloombergforeducation.com/certificates/your-bmc" target="_blank" rel="noopener">View Credential</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<section id="publications">
+  <h2>Publications</h2>
+  <div class="card-grid pubs-grid">
+    <article class="card pub-card">
+      <div class="media media-thumb">
+        <!-- Replace with your cover image -->
+        <img src="{{ url_for('static', filename='images/ijitee_logo.png') }}"
+             alt="IJITEE paper cover">
+      </div>
+      <div class="card-body">
+        <div class="badge-row">
+          <span class="badge">Journal</span>
+          <span class="badge badge-venue">IJITEE</span>
+          <span class="badge badge-outline">2020</span>
+        </div>
+        <h3 class="pub-title">
+          Big Data for Surveillance in Mobility Sector: Applications and Opportunities
+        </h3>
+        <p class="meta">International Journal of Innovative Technology and Exploring Engineering, 2020</p>
+        <ul>
+          <li>Keywords: Transport, Mobility, Big Data, IoT, Surveillance, Computer Vision.</li>
+          <li>Scope of the Article: IoT</li>
+        </ul>
+        <div class="btn-row">
+          <!-- Put your PDF/DOI URL -->
+          <a class="btn" href="https://www.ijitee.org/portfolio-item/H6604069820/" target="_blank" rel="noopener">View Paper</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+
+<section id="awards">
+  <h2>Awards and Recognitions</h2>
+
+  <div class="card-grid two">
+    <!-- Awards -->
+    <article class="card list-card">
+      <div class="card-body">
+        <h3 class="list-title">Awards</h3>
+        <ul class="bullet">
+          <li>2018 – 1st Rank — All India Innovative Idea Pitching Competition, NIT Nagpur, IN</li>
+          <li>2017 – 1st Rank — Project Competition, Engineering India Foundation, Nagpur</li>
+          <li>2018 & 2019 – 1st Runner‑up — Division Level Quiz Competition, Maharashtra, IN</li>
+          <li>2017 & 2018 – 1st Runner‑up — Mock Placement Competition, MCOET Shegaon</li>
+          <li>2019 – Top 10/500 — Smart Industry Hackathon, Tata Consultancy Services (Nagpur, IN)</li>
+          <li>2021 – Top 50 — TCS Kickoff Hackathon</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Recognitions -->
+    <article class="card list-card">
+      <div class="card-body">
+        <h3 class="list-title">Recognitions</h3>
+        <ul class="bullet">
+          <li>2024 — Fidelity Eureka Award (Fidelity Investments) for achievement in Financial Operations by optimizing workflow.</li>
+          <li>2022 — Recognized by Customer/Consumer for “Customer Obsessed” behavior (Fidelity Investments).</li>
+          <li>2019 — Special Achievement Award from Sipna College of Engineering for inter‑university representation.</li>
+          <li>2019 & 2020 — Co‑Convener and Convener of the National Level Technical Festival “VIDYOTAN”.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+
+<section id="testimonials">
+  <h2>Testimonials</h2>
+  <div class="card-grid two">
+    <blockquote class="quote-card">
+      <div class="quote-mark">“</div>
+      <p>Highly motivated and quick learner with a strong proficiency in Python and AWS. Committed to staying at the forefront of technology trends, ensuring efficient and effective solutions. Experienced troubleshooter with a strong sense of independence. Proven track record of resolving issues and ensuring smooth operations. Ready to take on new responsibilities and add value to any team.</p>
+      <footer class="person">
+        <img class="avatar" src="{{ url_for('static', filename='images/priya_shah.jpg') }}" alt="Priya Shah">
+        <div class="id">
+          <div class="name">Priya Shah</div>
+          <div class="role">Principal Engineer, Fidelity Investments (AI/ML Platform Lead)</div>
+          <a class="link" href="https://www.linkedin.com/in/..." target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </footer>
+    </blockquote>
+
+    <blockquote class="quote-card">
+      <div class="quote-mark">“</div>
+      <p>Pratik is an exceptional Python developer. His knowledge of Python and AWS services is what I personally have seen and appreciate during his tenure in the project. He has extremely good organizational and analytical capabilities and is able to work well on a team . Pratik would be an asset for any organization.</p>
+      <footer class="person">
+        <img class="avatar" src="{{ url_for('static', filename='images/bhabani_bal.jpg') }}" alt="Bhabani Bal">
+        <div class="id">
+          <div class="name">Bhabani Bal</div>
+          <div class="role">Senior Data Engineer, Tata Consultancy Services, UK</div>
+          <a class="link" href="https://www.linkedin.com/in/..." target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </footer>
+    </blockquote>
+
+  </div>
+</section>
+
+{% endblock %}
