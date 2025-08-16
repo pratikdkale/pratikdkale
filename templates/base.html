@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pratik Kale | Quant Portfolio</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script defer src="{{ url_for('static', filename='js/theme.js') }}"></script>
 </head>
 <body>
 
 <header class="site-nav">
   <div class="container">
-    <!-- Top row: brand | About+Blogs (center) | theme toggle -->
+    <!-- Top row: brand | About+Blogs (center) | theme toggle + burger -->
     <div class="nav-top">
       <div class="brand"><a href="{{ url_for('index') }}">Pratik D. Kale</a></div>
 
@@ -22,11 +23,15 @@
 
       <div class="nav-right">
         <button id="themeToggle" class="toggle" aria-label="Toggle theme">●</button>
+        <!-- Mobile burger -->
+        <button id="navBurger" class="burger" aria-expanded="false" aria-controls="navBottom" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
 
-    <!-- Bottom row: the rest -->
-    <nav class="nav-bottom">
+    <!-- Bottom row: collapsible on mobile -->
+    <nav id="navBottom" class="nav-bottom" data-open="false">
       <a href="{{ url_for('index') }}#case-studies">Major Work</a>
       <a href="{{ url_for('index') }}#experience">Experience</a>
       <a href="{{ url_for('index') }}#academics">Academics</a>
