@@ -15,3 +15,23 @@
     updateIcon();
   });
 })();
+
+// ------------------ Mobile nav toggle ------------------
+const burger = document.getElementById('navBurger');
+const navBottom = document.getElementById('navBottom');
+
+if (burger && navBottom) {
+  burger.addEventListener('click', () => {
+    const open = navBottom.getAttribute('data-open') === 'true';
+    navBottom.setAttribute('data-open', String(!open));
+    burger.setAttribute('aria-expanded', String(!open));
+  });
+
+  // Close menu after clicking a link
+  navBottom.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navBottom.setAttribute('data-open', 'false');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
