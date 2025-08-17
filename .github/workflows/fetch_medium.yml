@@ -7,12 +7,19 @@ on:
   push:
     branches: [ main ]
 
+# <-- This is the important bit for exit code 128
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true   # keeps GITHUB_TOKEN for push
+          fetch-depth: 0              # we will pull/rebase before pushing
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -28,14 +35,22 @@ jobs:
         run: |
           python scripts/build_medium.py
 
-      - name: Commit and push changes
+      - name: Configure git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # avoid non-fast-forward errors if something landed on main since checkout
+      - name: Rebase onto latest main
+        run: |
+          git pull --rebase origin main
+
+      - name: Commit changes (if any)
+        run: |
           git add static/data/medium_posts.json
           if ! git diff --cached --quiet; then
             git commit -m "chore: update Medium posts"
-            git push
+            git push origin HEAD:main
           else
             echo "No changes to commit."
           fi
