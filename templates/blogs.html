@@ -3,49 +3,21 @@
 <section id="blogs">
   <h2>Blogs</h2>
   <p class="muted">
-    Two spaces: <strong>DrunkKalam</strong> for personal reflections and learnings, and
-    <strong>QuantQuill</strong> on Medium for Quant, Finance, and Tech.
+    Two spaces: <strong>DrunkKalam</strong> (personal) and <strong>QuantQuill</strong> (technical on Medium).
   </p>
 
-  <!-- QuantQuill from Medium -->
   <h3 style="margin-top:10px;">QuantQuill on Medium</h3>
-  <div class="card-grid two">
-    {% for p in posts %}
-      <article class="card blog-card">
-        <div class="media">
-          {% if p.image %}
-            <img src="{{ p.image }}" alt="{{ p.title }}">
-          {% else %}
-            <img src="{{ url_for('static', filename='images/blog_placeholder.jpg') }}" alt="">
-          {% endif %}
-        </div>
-        <div class="card-body">
-          <div class="badge-row">
-            <span class="badge">Medium</span>
-            {% if p.read_min %}<span class="badge badge-outline">{{ p.read_min }} min read</span>{% endif %}
-          </div>
-          <h3 class="post-title">{{ p.title }}</h3>
-          <p class="meta">{{ p.published }}</p>
-          <p>{{ p.summary }}</p>
-          <div class="btn-row">
-            <a class="btn" href="{{ p.url }}" target="_blank" rel="noopener">Read on Medium</a>
-          </div>
-        </div>
-      </article>
-    {% endfor %}
-  </div>
+  <div id="mediumGrid" class="card-grid two"></div>
 
-  <!-- DrunkKalam (personal blog) -->
-  <!-- <h3 style="margin-top:18px;">DrunkKalam — Personal Blog</h3> -->
+  <h3 style="margin-top:18px;">DrunkKalam — Personal Blog</h3>
   <a class="promo-card promo-drunkkalam" href="https://pratikdkale.blogspot.com" target="_blank" rel="noopener">
     <div class="promo-text">
       <h4>From DrunkKalam</h4>
       <p>Personal reflections, life experiences, and learnings.</p>
     </div>
-    <div class="promo-action">Explore</div>
+    <div class="promo-action">Read</div>
   </a>
 
-  <!-- QuantQuill profile link -->
   <a class="promo-card promo-quantquill" href="https://medium.com/@quantquill" target="_blank" rel="noopener">
     <div class="promo-text">
       <h4>From QuantQuill</h4>
@@ -54,4 +26,39 @@
     <div class="promo-action">Explore</div>
   </a>
 </section>
+
+<script>
+(async function(){
+  try {
+    const res = await fetch("{{ url_for('static', filename='data/medium_posts.json') }}", { cache: "no-cache" });
+    const data = await res.json();
+    const grid = document.getElementById("mediumGrid");
+    grid.innerHTML = (data.posts || []).map(p => `
+      <article class="card blog-card">
+        <div class="media">
+          <img src="${p.image || '{{ url_for('static', filename='images/blog_placeholder.jpg') }}'}" alt="">
+        </div>
+        <div class="card-body">
+          <div class="badge-row">
+            <span class="badge">Medium</span>
+            ${p.read_min ? `<span class="badge badge-outline">${p.read_min} min read</span>` : ""}
+          </div>
+          <h3 class="post-title">${p.title}</h3>
+          <p class="meta">${p.published || ""}</p>
+          <p>${p.summary || ""}</p>
+          <div class="btn-row">
+            <a class="btn" href="${p.url}" target="_blank" rel="noopener">Read on Medium</a>
+          </div>
+        </div>
+      </article>
+    `).join("");
+  } catch(e){
+    console.error("Medium feed error:", e);
+    document.getElementById("mediumGrid").innerHTML = `
+      <div class="card"><div class="card-body"><p class="muted">Unable to load Medium posts right now.</p></div></div>
+    `;
+  }
+})();
+</script>
+
 {% endblock %}
