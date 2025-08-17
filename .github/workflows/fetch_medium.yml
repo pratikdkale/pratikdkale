@@ -41,9 +41,9 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       # avoid non-fast-forward errors if something landed on main since checkout
-      - name: Rebase onto latest main
-        run: |
-          git pull --rebase origin main
+      - name: Update repo
+        run: git fetch origin main
+
 
       - name: Commit changes (if any)
         run: |
