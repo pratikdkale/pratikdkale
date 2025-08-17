@@ -18,7 +18,7 @@
   <div class="container">
     <!-- Top row: brand | About+Blogs (center) | theme toggle + burger -->
     <div class="nav-top">
-      <div class="brand"><a href="index.html">Pratik D. Kale</a></div>
+      <div class="brand"><a href="/pratikdkale/index.html">Pratik D. Kale</a></div>
 
       <div class="nav-center">
         <a href="./about/">About</a>
@@ -36,13 +36,13 @@
 
     <!-- Bottom row: collapsible on mobile -->
     <nav id="navBottom" class="nav-bottom" data-open="false">
-      <a href="index.html#case-studies">Major Work</a>
-      <a href="index.html#experience">Experience</a>
-      <a href="index.html#academics">Academics</a>
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#certifications">Certifications</a>
-      <a href="index.html#publications">Publications</a>
-      <a href="index.html#awards">Awards</a>
+      <a href="/pratikdkale/#case-studies">Major Work</a>
+      <a href="/pratikdkale/#experience">Experience</a>
+      <a href="/pratikdkale/#academics">Academics</a>
+      <a href="/pratikdkale/#projects">Projects</a>
+      <a href="/pratikdkale/#certifications">Certifications</a>
+      <a href="/pratikdkale/#publications">Publications</a>
+      <a href="/pratikdkale/#awards">Awards</a>
     </nav>
   </div>
 </header>
@@ -79,13 +79,15 @@
 <script>
 (async function(){
   try {
-    const res = await fetch("static/data/medium_posts.json", { cache: "no-cache" });
+    const res = await fetch("/pratikdkale/static/data/medium_posts.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
     const data = await res.json();
+
     const grid = document.getElementById("mediumGrid");
     grid.innerHTML = (data.posts || []).map(p => `
       <article class="card blog-card">
         <div class="media">
-          <img src="${p.image || 'static/images/blog_placeholder.jpg'}" alt="">
+          <img src="${p.image || '/pratikdkale/static/images/blog_placeholder.jpg'}" alt="">
         </div>
         <div class="card-body">
           <div class="badge-row">
@@ -101,14 +103,15 @@
         </div>
       </article>
     `).join("");
-  } catch(e){
-    console.error("Medium feed error:", e);
+  } catch (e) {
+    console.error(e);
     document.getElementById("mediumGrid").innerHTML = `
       <div class="card"><div class="card-body"><p class="muted">Unable to load Medium posts right now.</p></div></div>
     `;
   }
 })();
 </script>
+
 
 
 </main>
