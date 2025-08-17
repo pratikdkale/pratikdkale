@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pratik Kale | Quant Portfolio</title>
+  <link rel="stylesheet" href="static/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script defer src="static/js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="container">
+    <!-- Top row: brand | About+Blogs (center) | theme toggle + burger -->
+    <div class="nav-top">
+      <div class="brand"><a href="index.html">Pratik D. Kale</a></div>
+
+      <div class="nav-center">
+        <a href="about">About</a>
+        <a href="blogs">Blogs</a>
+      </div>
+
+      <div class="nav-right">
+        <button id="themeToggle" class="toggle" aria-label="Toggle theme">●</button>
+        <!-- Mobile burger -->
+        <button id="navBurger" class="burger" aria-expanded="false" aria-controls="navBottom" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Bottom row: collapsible on mobile -->
+    <nav id="navBottom" class="nav-bottom" data-open="false">
+      <a href="index.html#case-studies">Major Work</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#academics">Academics</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#certifications">Certifications</a>
+      <a href="index.html#publications">Publications</a>
+      <a href="index.html#awards">Awards</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  
+<section id="about" class="about-cards">
+  <h2>About Me</h2>
+
+  <div class="about-grid">
+    <!-- Bio / primary card -->
+    <article class="card about-main">
+      <div class="card-body">
+        <header class="about-header">
+          <div class="about-avatar">
+            <img src="static/images/profile.jpg" alt="Pratik D. Kale">
+          </div>
+          <div>
+            <h3 class="about-name">Pratik D. Kale</h3>
+            <p class="about-tag">Quantitative Research • Cloud Engineering • Financial Modeling</p>
+          </div>
+        </header>
+
+        <p class="lead">
+          I am a quantitative researcher and cloud engineer focused on turning market data into reliable signals and
+          production systems. My work spans dynamic term-structure modeling, options hedging, anomaly detection,
+          and reinforcement learning for execution—shipping models with clear risk controls and reproducible results.
+        </p>
+
+        <p>
+          Beyond finance, I build resilient data pipelines and APIs, moving from research notebooks to services
+          with disciplined backtesting and automation. Prior work includes engagements with
+          <strong>NITI Aayog</strong>, <strong>DRDO</strong>, and <strong>NIC</strong>, alongside leadership in
+          technical festivals and community initiatives.
+        </p>
+
+        <div class="btn-row">
+          <a class="btn" href="static/docs/Pratik_Kale_Quant_Resume_2025.pdf" target="_blank" rel="noopener">Download Resume</a>
+          <a class="btn btn-outline" href="mailto:pratikdkale@gmail.com">Contact</a>
+          <a class="btn btn-outline" href="https://medium.com/@quantquill" target="_blank" rel="noopener">Visit Blog</a>
+        </div>
+
+        <div class="about-links">
+          <a href="https://www.linkedin.com/in/pratikdkale" target="_blank" rel="noopener">linkedin.com/in/pratikdkale</a>
+          <span>•</span>
+          <a href="https://github.com/pratikdkale" target="_blank" rel="noopener">github.com/pratikdkale</a>
+          <span>•</span>
+          <a href="mailto:pratikdkale@gmail.com">pratikdkale@gmail.com</a>
+          <span>•</span>
+          <span>New York, NY</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Skills / focus / blog promo -->
+    <article class="card about-side">
+      <div class="card-body">
+        <h3>Focus Areas</h3>
+        <div class="badge-cloud">
+          <span class="badge">Term Structure (DNS/Kalman)</span>
+          <span class="badge">Execution & RL</span>
+          <span class="badge">Options & Greeks</span>
+          <span class="badge">Time-Series</span>
+          <span class="badge">Anomaly Detection</span>
+          <span class="badge">Cloud Data Engineering</span>
+        </div>
+
+        <h3 style="margin-top:14px;">Toolbox</h3>
+        <div class="badge-cloud muted">
+          <span class="badge badge-outline">Python</span>
+          <span class="badge badge-outline">NumPy/Pandas</span>
+          <span class="badge badge-outline">statsmodels</span>
+          <span class="badge badge-outline">scikit‑learn</span>
+          <span class="badge badge-outline">XGBoost</span>
+          <span class="badge badge-outline">PyTorch</span>
+          <span class="badge badge-outline">SQL</span>
+          <span class="badge badge-outline">AWS</span>
+          <span class="badge badge-outline">Docker</span>
+          <span class="badge badge-outline">Terraform</span>
+          <span class="badge badge-outline">Airflow</span>
+          <span class="badge badge-outline">Git</span>
+        </div>
+
+        <details class="about-details">
+          <summary>Recent research threads</summary>
+          <ul class="mini">
+            <li>Macro‑aware Dynamic Nelson–Siegel slope forecasts with regime tests.</li>
+            <li>Delta–Gamma hedging behavior across market regimes and carry.</li>
+            <li>Execution with PPO under market‑impact constraints vs TWAP/VWAP.</li>
+            <li>Rare‑event detection in sparse data with stability checks.</li>
+          </ul>
+        </details>
+
+        <details class="about-details">
+          <summary>Earlier highlights (from my journey)</summary>
+          <ul class="mini">
+            <li>Worked with NITI Aayog (NIC, New Delhi) on government tech projects.</li>
+            <li>Collaborated with DRDO researchers on analytics reporting.</li>
+            <li>Built a fully functional portal at NIC for Atal Tinkering Labs (AIM).</li>
+            <li>Led national‑level tech festival operations as convener/co‑convener.</li>
+          </ul>
+        </details>
+
+        <!-- Personal Blog: DrunkKalam -->
+        <a class="promo-card promo-drunkkalam" href="https://pratikdkale.blogspot.com" target="_blank" rel="noopener">
+          <div class="promo-text">
+            <h4>From DrunkKalam</h4>
+            <p>Personal reflections, life experiences, and learnings — my thoughts unfiltered.</p>
+          </div>
+          <div class="promo-action">Read</div>
+        </a>
+
+        <!-- Technical Blog: QuantQuill -->
+        <a class="promo-card promo-quantquill" href="https://medium.com/@quantquill" target="_blank" rel="noopener">
+          <div class="promo-text">
+            <h4>From QuantQuill</h4>
+            <p>Articles on Quant, Finance, and Technology. Deep dives, strategies, and insights.</p>
+          </div>
+          <div class="promo-action">Read</div>
+        </a>
+
+      </div>
+    </article>
+  </div>
+</section>
+
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 Pratik D. Kale • Quantitative Research, Strategy, and Engineering</p>
+  </div>
+</footer>
+</body>
+</html>

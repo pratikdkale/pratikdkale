@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pratik Kale | Quant Portfolio</title>
+  <link rel="stylesheet" href="static/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script defer src="static/js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="container">
+    <!-- Top row: brand | About+Blogs (center) | theme toggle + burger -->
+    <div class="nav-top">
+      <div class="brand"><a href="index.html">Pratik D. Kale</a></div>
+
+      <div class="nav-center">
+        <a href="about">About</a>
+        <a href="blogs">Blogs</a>
+      </div>
+
+      <div class="nav-right">
+        <button id="themeToggle" class="toggle" aria-label="Toggle theme">●</button>
+        <!-- Mobile burger -->
+        <button id="navBurger" class="burger" aria-expanded="false" aria-controls="navBottom" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Bottom row: collapsible on mobile -->
+    <nav id="navBottom" class="nav-bottom" data-open="false">
+      <a href="index.html#case-studies">Major Work</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#academics">Academics</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#certifications">Certifications</a>
+      <a href="index.html#publications">Publications</a>
+      <a href="index.html#awards">Awards</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  
+<section id="blogs">
+  <h2>Blogs</h2>
+  <p class="muted">
+    Two spaces: <strong>DrunkKalam</strong> (personal) and <strong>QuantQuill</strong> (technical on Medium).
+  </p>
+
+  <h3 style="margin-top:10px;">QuantQuill on Medium</h3>
+  <div id="mediumGrid" class="card-grid two"></div>
+
+  <h3 style="margin-top:18px;">DrunkKalam — Personal Blog</h3>
+  <a class="promo-card promo-drunkkalam" href="https://pratikdkale.blogspot.com" target="_blank" rel="noopener">
+    <div class="promo-text">
+      <h4>From DrunkKalam</h4>
+      <p>Personal reflections, life experiences, and learnings.</p>
+    </div>
+    <div class="promo-action">Read</div>
+  </a>
+
+  <a class="promo-card promo-quantquill" href="https://medium.com/@quantquill" target="_blank" rel="noopener">
+    <div class="promo-text">
+      <h4>From QuantQuill</h4>
+      <p>Articles on Quant, Finance, and Technology.</p>
+    </div>
+    <div class="promo-action">Explore</div>
+  </a>
+</section>
+
+<script>
+(async function(){
+  try {
+    const res = await fetch("static/data/medium_posts.json", { cache: "no-cache" });
+    const data = await res.json();
+    const grid = document.getElementById("mediumGrid");
+    grid.innerHTML = (data.posts || []).map(p => `
+      <article class="card blog-card">
+        <div class="media">
+          <img src="${p.image || 'static/images/blog_placeholder.jpg'}" alt="">
+        </div>
+        <div class="card-body">
+          <div class="badge-row">
+            <span class="badge">Medium</span>
+            ${p.read_min ? `<span class="badge badge-outline">${p.read_min} min read</span>` : ""}
+          </div>
+          <h3 class="post-title">${p.title}</h3>
+          <p class="meta">${p.published || ""}</p>
+          <p>${p.summary || ""}</p>
+          <div class="btn-row">
+            <a class="btn" href="${p.url}" target="_blank" rel="noopener">Read on Medium</a>
+          </div>
+        </div>
+      </article>
+    `).join("");
+  } catch(e){
+    console.error("Medium feed error:", e);
+    document.getElementById("mediumGrid").innerHTML = `
+      <div class="card"><div class="card-body"><p class="muted">Unable to load Medium posts right now.</p></div></div>
+    `;
+  }
+})();
+</script>
+
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 Pratik D. Kale • Quantitative Research, Strategy, and Engineering</p>
+  </div>
+</footer>
+</body>
+</html>
