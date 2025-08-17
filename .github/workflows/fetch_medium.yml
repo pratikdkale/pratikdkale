@@ -1,0 +1,41 @@
+name: Fetch Medium Posts
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # every 6 hours
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install feedparser beautifulsoup4
+
+      - name: Build Medium JSON
+        run: |
+          python scripts/build_medium.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add static/data/medium_posts.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update Medium posts"
+            git push
+          else
+            echo "No changes to commit."
+          fi
