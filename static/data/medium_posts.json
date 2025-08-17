@@ -1,0 +1,37 @@
+{
+  "updated": "2025-08-17T21:05:23.524091Z",
+  "posts": [
+    {
+      "title": "The t-Distribution: Fat-Tailed Friend or Foe?",
+      "url": "https://medium.com/@quantquill/the-t-distribution-fat-tailed-friend-or-foe-9dd3c6c44e24?source=rss-1d34d76873c8------2",
+      "published": "Sun, 17 Aug 2025 19:42:50 GMT",
+      "summary": "What Is the t-Distribution? The Student’s t-distribution is like the Normal distribution’s more cautious cousin. It’s especially useful when: We have small sample sizes The population standard deviation is unknown We want to be prepared for…",
+      "image": "https://cdn-images-1.medium.com/max/500/1*ZkY4vQMyc6_OF5E9Q0pMzg.png",
+      "read_min": 2
+    },
+    {
+      "title": "The Shape of Danger: A Quant’s Guide to Skewness, Kurtosis, and Tail Risk",
+      "url": "https://medium.com/@quantquill/the-shape-of-danger-a-quants-guide-to-skewness-kurtosis-and-tail-risk-20d4f6d56122?source=rss-1d34d76873c8------2",
+      "published": "Mon, 19 May 2025 21:33:45 GMT",
+      "summary": "Chapter 1: The Bell Is Not Enough Previous chapters familiarized us with Sir Gaussian -the height of statistical nuance. He conceptualized market behavior as sleek, centered, and even-tempered. What’s hidden under that smooth bell curve, th…",
+      "image": "https://cdn-images-1.medium.com/max/1024/1*2JGcx56RTXOaIY6OFJd-VA.png",
+      "read_min": 4
+    },
+    {
+      "title": "“The Bell Curve is a Lie”: A Quirky Journey Through the Rise and Fall of the Normal Distribution",
+      "url": "https://medium.com/@quantquill/the-bell-curve-is-a-lie-a-quirky-journey-through-the-rise-and-fall-of-the-normal-distribution-3cb59741b172?source=rss-1d34d76873c8------2",
+      "published": "Sun, 18 May 2025 15:34:31 GMT",
+      "summary": "Act 1: Meet Mr. Normal -The Gentleman of Statistics: Imagine the Normal distribution as a well-dressed British gentleman. He’s calm, elegant, and always symmetrical. Let’s call him Sir Gaussian . “I predict 95% of life’s randomness lies wit…",
+      "image": "https://cdn-images-1.medium.com/max/996/1*peN8AzcGR3C5C-Qd-fNjXA.png",
+      "read_min": 4
+    },
+    {
+      "title": "Foundations of Quantitative Finance: Understanding Markets Through Mathematics",
+      "url": "https://medium.com/@quantquill/foundations-of-quantitative-finance-understanding-markets-through-mathematics-d287f6de7c95?source=rss-1d34d76873c8------2",
+      "published": "Fri, 16 May 2025 23:44:38 GMT",
+      "summary": "Basis of Quantitative Finance: Unlocking Markets with Mathematics Financial markets appear to be a dinning sea of numbers, headlines, and high‐speed decisions. But beneath the surface lies a framework of rules and models that even explain a…",
+      "image": "https://cdn-images-1.medium.com/max/762/1*2EOm_5dJBjGsxG3f3EtTiw.jpeg",
+      "read_min": 4
+    }
+  ]
+}
