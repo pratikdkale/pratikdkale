@@ -1,6 +1,6 @@
-# Quant Portfolio — Flask
+# Quant Portfolio - Flask
 
-A finance-themed personal portfolio built with Flask. Includes sections for Experience, Academics (with subjects), Projects, Certifications, Publications, Awards, plus standalone About and Blog pages. Dark/light theme toggle with persistence.
+A finance-themed personal portfolio built with Flask. Includes sections for Experience, Academics (with subjects), Projects, Certifications, Publications, Awards, Testimonials plus standalone About and Blog pages. Dark/light theme toggle with persistence.
 
 ## Run locally
 
